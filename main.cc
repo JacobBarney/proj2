@@ -47,12 +47,9 @@ BST* add(BST **root, BST *newNode)
 
 void findBook(HashTableEntry *hashTable, char *bookTitle, int prime)
 {   
-    HashTableEntry *curEntry = &hashTable[stringValue(bookTitle, prime)];
-
-    while(curEntry->book)
+    HashTableEntry *curEntry = &(hashTable[stringValue(bookTitle, prime)]);
+    while(curEntry)
     {
-        cout << "Inside the findBook while loop";
-        cout << "" <<  curEntry->book->book.title;
         if(!strcmp(curEntry->book->book.title, bookTitle))
         {
             print(curEntry->book->book);
@@ -156,19 +153,23 @@ void findGenreLH(Genre *genres, int numGenres, char *genreStr, char *low, char *
 }
 
 
-
-
 void addHash(HashTableEntry *hashtable, BST *book)
 {
-    if(hashtable->book)
-        addHash(hashtable->next, book);
+    if(hashtable)
+        if(hashtable->book)
+            addHash(hashtable->next, book);
+        else
+        {
+            hashtable->book = book;
+            strncpy(hashtable->title, book->book.title, TITLE_LEN);
+        }
     else
+    {
+        hashtable = new HashTableEntry;
         hashtable->book = book;
+        strncpy(hashtable->title, book->book.title, TITLE_LEN);
+    }
 }
-
-
-
-
 
 int main()
 {
@@ -248,9 +249,7 @@ int main()
         
         newNode->book = *book;
 
-        hashTable[stringValue(book->title, prime)].book = add(&(genres[currentGenre].root), newNode);
-        
-        strncpy(hashTable[stringValue(book->title, prime)].title, book->title, TITLE_LEN);
+        addHash(&hashTable[stringValue(book->title, prime)], add(&(genres[currentGenre].root), newNode));
     }
     
     int queries = 0;
@@ -298,6 +297,5 @@ int main()
 
             findGenreLH(genres, numGenres, queryTerm, queryTermLow, queryTermHi);
         }
-        cout << "Done checking range\n";   
-    }   
+    }
 }
