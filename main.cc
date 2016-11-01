@@ -138,15 +138,19 @@ void printNode(BST *node)
 }
 
 
-void printNodeLowHi(BST *node, char *low, char *hi)
+bool printNodeLowHi(BST *node, char *low, char *hi)
 {
-    cout << low << " " << hi << "\n";
+    bool found = false;
     if(node->left)
-        printNodeLowHi(node->left);
+        found = found || printNodeLowHi(node->left, low, hi);
     if((strcmp(node->book.title, low) >= 0) && (strcmp(node->book.title, hi) <= 0))
+    {
         cout << node->book.title<<"\n";
+        found = true;
+    }
     if(node->right)
-        printNodeLowHi(node->right);
+        found = found || printNodeLowHi(node->right, low, hi);
+    return found;
 }
 
 
@@ -167,11 +171,13 @@ void findGenre(Genre *genres, int numGenres, char *genreStr)
 void findGenreLH(Genre *genres, int numGenres, char *genreStr, char *low, char *hi)
 {
     cout << "Finding genre low hi \n";
+    cout << low << " " << hi << "\n";
     for(int i = 0; i < numGenres; i++)
     {
         if(!strcmp(genres[i].genre, genreStr))
         {
-            printNodeLowHi(genres[i].root, low, hi);
+            if(!printNodeLowHi(genres[i].root, low, hi))
+                cout << "No books found for given range.\n";
             return;
         }
     }
