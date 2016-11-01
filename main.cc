@@ -48,7 +48,7 @@ BST* add(BST **root, BST *newNode)
 void findBook(HashTableEntry *hashTable, char *bookTitle, int prime)
 {   
     HashTableEntry *curEntry = &(hashTable[stringValue(bookTitle, prime)]);
-    while(curEntry)
+    while(curEntry && curEntry->book)
     {
         if(!strcmp(curEntry->book->book.title, bookTitle))
         {
@@ -72,7 +72,6 @@ int stringValue(char *str, int size)
     {
         sum+= int(str[i]);
     }
-
     return sum % size;
 }
 
@@ -85,7 +84,7 @@ void print(BookInfo book)
 
     for(int i = 0; i < NO_FORMATS; i++)
     {   
-        if(!strcmp(book.formats[i].format, ""))
+        if(strcmp(book.formats[i].format, ""))
         {
             cout << "" << book.formats[i].format << "\n";
             cout << "" << book.formats[i].price << "\n";
@@ -115,6 +114,7 @@ void printNode(BST *node)
 
 void printNodeLowHi(BST *node, char *low, char *hi)
 {
+    cout << low << " " << hi << "\n";
     if(node->left)
         printNode(node->left);
     if((strcmp(node->book.title, low) >= 0) && (strcmp(node->book.title, hi) <= 0));
@@ -261,13 +261,13 @@ int main()
     
     for(int i = 0; i < queries; i++)
     {
-        char query[100];
+        char query[200];
         char queryType[10];
         char findType[10];
-        char queryTerm[80];
+        char queryTerm[100] = {0};
         char queryTermLow[10];
         char queryTermHi[10];
-        cin.getline(query, 100);
+        cin.getline(query, 200);
         stringstream s(query);
         s >> queryType;
         if(!strcmp(queryType, "find"))
@@ -276,13 +276,13 @@ int main()
             if(!strcmp(findType, "book"))
             {
                 s.ignore(numeric_limits<streamsize>::max(), '\"');
-                s.getline(queryTerm, 90, '\"');
+                s.getline(queryTerm, 100, '\"');
                 findBook(hashTable, queryTerm, prime);
             }
             else if(!strcmp(findType, "genre"))
             {
                 s.ignore(numeric_limits<streamsize>::max(), '\"');
-                s.getline(queryTerm, 90, '\"');
+                s.getline(queryTerm, 100, '\"');
                 findGenre(genres, numGenres, queryTerm);
             }
         }
