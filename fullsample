@@ -1,0 +1,346 @@
+9
+Classics
+Mystery
+Science Fiction
+Westerns
+Satire
+Romance
+Health
+Travel
+History
+24
+Classics
+The Sun Also Rises
+Ernest Hemingway
+Scribner
+2
+Kindle
+6.99
+40
+Paperback
+12.24
+155
+Romance
+Outlander
+Diana Gabaldon
+A Delta Book
+3
+Kindle
+3.99
+59
+Hardcover
+19.77
+23
+Paperback
+10.37
+195
+Classics
+The Brothers Karamazov
+Fyodor Dostoyevsky
+Dover Thrift Edition
+4
+Kindle
+0.00
+100
+Hardcover
+12.99
+200
+Paperback
+4.80
+80
+Audible
+17.95
+5
+Classics
+Animal Farm
+George Orwell
+Signet Classic
+1
+Paperback
+3.54
+200
+Classics
+Mrs Dalloway
+Virginia Woolf
+Centaur Classics
+1
+Kindle
+0.99
+90
+Classics
+Great Expectations
+Charles Dickens
+Shine Classics
+4
+Kindle
+0.05
+100
+Hardcover
+22.99
+25
+Paperback
+9.99
+1000
+Audible
+2.95
+10
+Classics
+To Kill a Mockingbird
+Harper Lee
+Grand Central Publishing
+2
+Kindle
+9.99
+30
+Paperback
+5.44
+100
+Romance
+Lord of Scoundrels
+Loretta Chase
+Avon Romantic Treasure
+1
+Paperback
+6.48
+12
+Health
+The End of Overeating
+David A. Kessler
+Rodale Inc.
+4
+Kindle
+7.99
+15
+Hardcover
+25.95
+353
+Paperback
+13.73
+249
+Audible
+0.00
+100
+History
+The Rise and Fall of the Third Reich
+William L. Shirer
+Rosetta Books
+3
+Hardcover
+13.09
+29
+Paperback
+8.96
+20
+Audible
+35.95
+70
+Mystery
+And Then There Were None
+Agatha Christie
+Harper Collins
+3
+Kindle
+7.99
+100
+Hardcover
+13.74
+100
+Paperback
+9.64
+243
+Mystery
+Rebecca
+Daphne du Maurier
+Harper Collins
+2
+Kindle
+9.99
+30
+Paperback
+10.68
+100
+Travel
+The Road to Oxiana
+Robert Byron
+Oxford University Press
+1
+Paperback
+15.95
+39
+Travel
+Into the Wild
+Jon Krakauer
+Random House
+2
+Paperback
+11.49
+40
+Kindle
+11.99
+10
+Travel
+West with the Night
+Beryl Markham
+North Point Press
+4
+Kindle
+8.54
+39
+Hardcover
+2.29
+45
+Paperback
+13.22
+111
+Audible
+0.00
+10
+Westerns
+The Assassination of Jesse James by the Coward Robert Ford
+Ron Hansen
+Harper Collins
+3
+Kindle
+9.99
+26
+Hardcover
+9.70
+28
+Paperback
+11.18
+116
+Westerns
+Lonesome Dove
+Larry McMurtry
+Simon & Schuster
+3
+Kindle
+9.99
+5
+Hardcover
+30.11
+29
+Paperback
+11.31
+68
+Westerns
+The Hell Bent Kid
+Charles O. Locke
+Early Bird Books
+3
+Kindle
+1.99
+8
+Hardcover
+38.01
+1
+Paperback
+33.11
+1
+Travel
+A Short Walk in the Hindu Kush
+Eric Newby
+Harper Press
+3
+Kindle
+9.99
+24
+Hardcover
+54.79
+18
+Paperback
+6.42
+17
+Satire
+Catch-22
+Joseph Keller
+Simon & Schuster
+3
+Kindle
+11.99
+104
+Hardcover
+12.24
+44
+Paperback
+14.81
+164
+Travel
+The Innocents Abroad
+Mark Twain
+Wordsworth Classics
+3
+Hardcover
+24.95
+10
+Paperback
+5.38
+200
+Audible
+15.95
+15
+Travel
+In a Sunburned Country
+Bill Bryson
+First Broadway Books
+3
+Kindle
+11.99
+36
+Hardcover
+9.23
+27
+Paperback
+13.79
+463
+Science Fiction
+Stranger in a Strange Land
+Robert A. Heinlein
+An Ace Book
+4
+Kindle
+9.99
+300
+Hardcover
+22.83
+40
+Paperback
+13.83
+200
+Audible
+0.00
+100
+Science Fiction
+The Time Machine
+H. G. Wells
+Dover Thrift Editions
+4
+Kindle
+0.00
+100
+Hardcover
+6.95
+200
+Paperback
+2.10
+50
+Audible
+0.95
+40
+15
+find book "Great Expectations"
+find book "Of Mice and Men"
+find book "Into the Wild"
+find genre "Classics"
+find genre "History"
+range "Classics" "Ga" "Gz"
+range "Classics" "A" "B"
+price "Great Expectations"
+price "To Kill a Mockingbird"
+price "A Short Walk in the Hindu Kush"
+price "Lord of the Flies"
+sell book "The Time Machine" Hardcover
+sell book "Stranger in a Strange Land" Kindle
+buy book "And Then There Were None" "Agatha Christie" "Harper Collins" Kindle 8.99 50
+buy book "The Principia" "Isaac Newton" "University of California Press" Paperback 14.99 20
+
