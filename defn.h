@@ -4,7 +4,8 @@ using namespace std;
 #include <string>
 #include <limits>
 #include <cstring>
-
+#include <math.h>
+#include <sstream>
 
 #define GENRE_LEN       25
 #define TITLE_LEN       100
@@ -27,7 +28,7 @@ struct BookInfo{
 };
 
 struct BST{ // A binary search tree
-    struct BookInfo; // Info about the book
+    struct BookInfo book; // Info about the book
     struct BST *left; // Pointer to the left subtree
     struct BST *right; // Pointer to the right subtree
 };
@@ -40,4 +41,5 @@ struct Genre{
 struct HashTableEntry{
     char title[TITLE_LEN]; // Title of th ebook
     struct BST *book; // Pointer to the node in tree containing the books info
+    struct HashTableEntry *next; // Pointer to the next HashTableEntry
 };
