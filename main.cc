@@ -60,10 +60,21 @@ void findBook(HashTableEntry *hashTable, char *bookTitle, int prime)
     }
     cout << "Book not carried\n";
 }
-/*void findBookPrice(HashTableEntry *hashTable, char *bookTitle, int prime)
+
+void findPrice(HashTableEntry *hashTable, char *bookTitle, int prime)
 {
-    if(hashTable[stringValue(bookTitle, prime)].book)
-}*/
+    HashTableEntry *curEntry = &(hashTable[stringValue(bookTitle, prime)]);
+    while(curEntry && curEntry->book)
+    {
+        if(!strcmp(curEntry->book->book.title, bookTitle))
+        {
+            printFormats(curEntry->book->book);
+        }
+        else
+            curEntry = curEntry->next;
+    }
+    cout << "Book not carried\n";
+}
 
 int stringValue(char *str, int size)
 {
@@ -84,6 +95,21 @@ void print(BookInfo book)
 
     for(int i = 0; i < NO_FORMATS; i++)
     {   
+        if(strcmp(book.formats[i].format, ""))
+        {
+            cout << "" << book.formats[i].format << "\n";
+            cout << "" << book.formats[i].price << "\n";
+            cout << "" << book.formats[i].quantity << "\n";
+        }
+    }
+}
+
+void printFormats(BookInfo book)
+{
+    cout << "" << book.title << "\n";
+
+    for(int i = 0; i < NO_FORMATS; i++)
+    {
         if(strcmp(book.formats[i].format, ""))
         {
             cout << "" << book.formats[i].format << "\n";
@@ -116,11 +142,11 @@ void printNodeLowHi(BST *node, char *low, char *hi)
 {
     cout << low << " " << hi << "\n";
     if(node->left)
-        printNode(node->left);
-    if((strcmp(node->book.title, low) >= 0) && (strcmp(node->book.title, hi) <= 0));
+        printNodeLowHi(node->left);
+    if((strcmp(node->book.title, low) >= 0) && (strcmp(node->book.title, hi) <= 0))
         cout << node->book.title<<"\n";
     if(node->right)
-        printNode(node->right);
+        printNodeLowHi(node->right);
 }
 
 
@@ -257,8 +283,6 @@ int main()
     cin >> queries;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     
-    cout << "done filling table";
-    
     for(int i = 0; i < queries; i++)
     {
         char query[200];
@@ -296,6 +320,12 @@ int main()
             s.getline(queryTermHi, 10, '\"');
 
             findGenreLH(genres, numGenres, queryTerm, queryTermLow, queryTermHi);
+        }
+        else if(!strcmp(queryType, "price"))
+        {
+            s.ignore(numeric_limits<streamsize>::max(), '\"');
+            s.getline(queryTerm, 20, '\"');
+            findPrice(hashTable, queryTerm, prime);
         }
     }
 }
